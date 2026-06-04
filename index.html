@@ -28,14 +28,12 @@
     <nav class="nav" aria-label="Navegacao principal">
       <a href="#mensagem">Mensagem</a>
       <a href="#dia">O Grande Dia</a>
-      <a href="#traje">Traje</a>
       <a href="#galeria">Galeria</a>
       <a href="#rsvp">RSVP</a>
     </nav>
 
     <div class="bandeirinhas" aria-hidden="true"></div>
     <div class="hero-card">
-      <p class="eyebrow">Arraia premium de aniversario</p>
       <h1 class="shine-text">Cecilia</h1>
       <p class="hero-date">28.06.2026 • 18h • Fortaleza</p>
       <div class="sao-joao-stage" aria-label="Animacao de Sao Joao com fogueira e bonecos dancando">
@@ -139,17 +137,6 @@
       </div>
     </section>
 
-    <section class="section attire reveal" id="traje">
-      <div class="section-label">Traje tematico</div>
-      <h2>Vista seu melhor arraiá</h2>
-      <p>Venha no clima junino: xadrez, vestido rodado, laco colorido, chapeu de palha, botinha, jeans, suspensorio ou aquele detalhe fofo que deixa a foto ainda mais linda.</p>
-      <div class="attire-grid">
-        <article><span>👒</span><strong>Chapeu de palha</strong><small>O classico que combina com tudo.</small></article>
-        <article><span>🌻</span><strong>Flores e lacos</strong><small>Um toque delicado e infantil.</small></article>
-        <article><span>👗</span><strong>Xadrez colorido</strong><small>A cara do nosso Sao Joao.</small></article>
-      </div>
-    </section>
-
     <section class="section gallery reveal" id="galeria">
       <div class="section-label">Galeria decorativa</div>
       <h2>Um cantinho cheio de encanto</h2>
@@ -167,34 +154,11 @@
       <div class="section-label">RSVP</div>
       <h2>Confirme sua presenca</h2>
       <p class="deadline">A confirmacao sera encerrada em 28/06/2026.</p>
-      <form class="rsvp-form premium-form" id="rsvpForm">
-        <input type="hidden" name="status" value="Vou">
-        <label>
-          Nome
-          <input type="text" name="name" placeholder="Seu nome completo" required maxlength="100">
-        </label>
-        <label>
-          Quantidade de acompanhantes
-          <input type="number" name="guests" min="0" max="20" value="0" required>
-        </label>
-        <label>
-          Recadinho ou observacao
-          <textarea name="note" rows="3" placeholder="Ex: vou com duas criancas, tenho restricao alimentar..."></textarea>
-        </label>
-        <button class="btn btn-primary" type="submit">Confirmar agora</button>
-      </form>
       <div class="rsvp-invite-card">
         <div class="floating-lantern" aria-hidden="true"></div>
         <h3>Fale para a Cecilia se voce podera ir</h3>
         <p>Ao clicar, voce vai para uma tela especial com as opcoes de presenca.</p>
         <a class="btn btn-primary" href="rsvp.html">Abrir confirmacao</a>
-      </div>
-
-      <div class="panel">
-        <h3>Confirmacoes salvas neste navegador</h3>
-        <div class="stats" id="rsvpStats"></div>
-        <div class="list" id="rsvpList"></div>
-        <button class="btn btn-ghost" id="exportBtn" type="button">Exportar lista CSV</button>
       </div>
     </section>
 

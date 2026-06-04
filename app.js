@@ -89,18 +89,22 @@ function updateCountdown() {
 }
 
 function renderRsvps() {
+  const statsTarget = $("#rsvpStats");
+  const listTarget = $("#rsvpList");
+  if (!statsTarget || !listTarget) return;
+
   const rsvps = readJson(storageKeys.rsvps, []);
   const accepted = rsvps.filter((item) => item.status === "Vou");
   const declined = rsvps.filter((item) => item.status === "Nao vou");
   const totalGuests = accepted.reduce((sum, item) => sum + 1 + Number(item.guests || 0), 0);
 
-  $("#rsvpStats").innerHTML = `
+  statsTarget.innerHTML = `
     <span>${accepted.length} confirmados</span>
     <span>${declined.length} nao vao</span>
     <span>${totalGuests} pessoas no total</span>
   `;
 
-  $("#rsvpList").innerHTML = rsvps.length
+  listTarget.innerHTML = rsvps.length
     ? rsvps.map((item) => `
       <article>
         <strong>${escapeHtml(item.name)}</strong> - ${escapeHtml(item.status)}
