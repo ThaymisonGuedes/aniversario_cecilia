@@ -82,6 +82,22 @@ function setupOpeningInvite() {
   setTimeout(open, 1600);
 }
 
+function setupSoftParallax() {
+  const ambientItems = document.querySelectorAll(".ambient span, .section-deco, .hero-girl");
+  if (!ambientItems.length) return;
+
+  const update = () => {
+    const offset = window.scrollY * 0.035;
+    ambientItems.forEach((item, index) => {
+      const direction = index % 2 === 0 ? 1 : -1;
+      item.style.setProperty("--parallax", `${offset * direction}px`);
+    });
+  };
+
+  update();
+  window.addEventListener("scroll", update, { passive: true });
+}
+
 function updateCountdown() {
   const target = $("#countdown");
   const diff = eventDate - new Date();
@@ -171,6 +187,7 @@ if (rsvpForm) {
     event.currentTarget.reset();
     event.currentTarget.elements.status.value = "Vou";
     event.currentTarget.elements.guests.value = 0;
+    $("#rsvpSuccess")?.classList.add("is-open");
     launchConfetti(window.innerWidth / 2, window.innerHeight / 2);
     renderRsvps();
   });
@@ -233,5 +250,6 @@ renderRsvps();
 renderMessages();
 setupRevealAnimations();
 setupOpeningInvite();
+setupSoftParallax();
 setInterval(updateCountdown, 1000);
 setInterval(launchFirework, 5200);

@@ -55,6 +55,7 @@
     <nav class="nav" aria-label="Navegacao principal">
       <a href="#mensagem">Mensagem</a>
       <a href="#dia">O Grande Dia</a>
+      <a href="#traje">Traje</a>
       <a href="#galeria">Galeria</a>
       <a href="#rsvp">RSVP</a>
     </nav>
@@ -145,6 +146,11 @@
             <span><b>--</b>seg</span>
           </div>
         </article>
+        <article class="glass-card">
+          <span class="card-icon">♡</span>
+          <strong>Observacao</strong>
+          <p>Venha com alegria, celular carregado para fotos e vontade de brincar no arraiá da Cecilia.</p>
+        </article>
       </div>
 
       <div class="calendar-strip">
@@ -173,6 +179,19 @@
       </div>
     </section>
 
+    <section class="section attire reveal" id="traje">
+      <span class="section-deco hat-deco" aria-hidden="true"></span>
+      <span class="section-deco bow-deco" aria-hidden="true"></span>
+      <div class="section-label">Traje tematico</div>
+      <h2>Entre no clima do arraiá</h2>
+      <p>O traje e livre, mas quem quiser entrar na brincadeira pode vir com xadrez, vestido rodado, laco colorido, chapeu de palha, botinha ou um detalhe junino bem fofo.</p>
+      <div class="attire-grid">
+        <article><span>👒</span><strong>Chapeu de palha</strong><small>Decorado com laco, flor ou fita colorida.</small></article>
+        <article><span>🎀</span><strong>Lacos e fitas</strong><small>Rosa, lilas e amarelinho para fotos lindas.</small></article>
+        <article><span>👗</span><strong>Vestido xadrez</strong><small>Caipirinha delicada, alegre e confortavel.</small></article>
+      </div>
+    </section>
+
     <section class="section gallery reveal" id="galeria">
       <div class="section-label">Galeria decorativa</div>
       <h2>Um cantinho cheio de encanto</h2>
@@ -190,6 +209,23 @@
       <div class="section-label">RSVP</div>
       <h2>Confirme sua presenca</h2>
       <p class="deadline">A confirmacao sera encerrada em 28/06/2026.</p>
+      <form class="rsvp-form premium-form" id="rsvpForm">
+        <input type="hidden" name="status" value="Vou">
+        <label>
+          Nome
+          <input type="text" name="name" placeholder="Seu nome completo" required maxlength="100">
+        </label>
+        <label>
+          Acompanhantes
+          <input type="number" name="guests" min="0" max="20" value="0" required>
+        </label>
+        <label>
+          Mensagem opcional
+          <textarea name="note" rows="3" placeholder="Deixe uma observacao ou recadinho para a familia"></textarea>
+        </label>
+        <button class="btn btn-primary" type="submit">Confirmar presenca com confete</button>
+        <div class="success-box" id="rsvpSuccess">Presenca confirmada com sucesso! Vai ser lindo ter voce no arraiá.</div>
+      </form>
       <div class="rsvp-invite-card">
         <div class="floating-lantern" aria-hidden="true"></div>
         <h3>Fale para a Cecilia se voce podera ir</h3>

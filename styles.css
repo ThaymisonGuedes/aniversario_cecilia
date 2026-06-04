@@ -327,7 +327,7 @@ h2 {
 }
 .mini-cards, .gift-grid, .event-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1rem;
   margin-top: 1.5rem;
 }
@@ -1138,6 +1138,13 @@ h1 {
   z-index: 3;
   pointer-events: none;
 }
+.ambient .cloud,
+.ambient .balloon,
+.ambient .lantern,
+.section-deco,
+.hero-girl {
+  margin-top: var(--parallax, 0);
+}
 
 .cloud {
   width: 150px;
@@ -1220,6 +1227,19 @@ h1 {
   backdrop-filter: blur(16px);
 }
 
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .35;
+  background:
+    linear-gradient(90deg, transparent 0 47%, rgba(255,255,255,.72) 47% 53%, transparent 53%),
+    linear-gradient(0deg, transparent 0 47%, rgba(244,92,156,.18) 47% 53%, transparent 53%);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(circle at 100% 0, black, transparent 58%);
+}
+
 .section::after {
   content: "";
   position: absolute;
@@ -1280,6 +1300,52 @@ h1 {
   gap: 1rem;
   margin-top: 1.4rem;
 }
+
+.section-deco {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+.hat-deco {
+  right: 3rem;
+  top: 2rem;
+  width: 92px;
+  height: 28px;
+  border-radius: 50% 50% 12px 12px;
+  background: var(--straw);
+  transform: rotate(8deg);
+  box-shadow: inset 0 -8px 0 rgba(138,85,56,.12);
+  animation: iconBounce 2.8s ease-in-out infinite;
+}
+.hat-deco::before {
+  content: "";
+  position: absolute;
+  left: 29px;
+  top: -38px;
+  border-left: 18px solid transparent;
+  border-right: 18px solid transparent;
+  border-bottom: 45px solid #d3a96b;
+}
+.bow-deco {
+  left: 2.2rem;
+  bottom: 2rem;
+  width: 36px;
+  height: 28px;
+  background: var(--pink);
+  border-radius: 70% 30% 70% 30%;
+  transform: rotate(-18deg);
+  animation: twinkle 2.4s ease-in-out infinite;
+}
+.bow-deco::after {
+  content: "";
+  position: absolute;
+  left: 30px;
+  top: 0;
+  width: 36px;
+  height: 28px;
+  border-radius: 30% 70% 30% 70%;
+  background: var(--lilac);
+}
 .attire-grid article,
 .gallery-card {
   min-height: 150px;
@@ -1323,8 +1389,16 @@ h1 {
   border: 1px solid rgba(244,92,156,.18);
 }
 .premium-form label:nth-of-type(3),
-.premium-form button {
+.premium-form button,
+.premium-form .success-box {
   grid-column: 1 / -1;
+}
+
+.premium-form .success-box {
+  margin: 0;
+  text-align: center;
+  border: 1px solid rgba(139,207,147,.36);
+  background: linear-gradient(135deg, rgba(139,207,147,.22), rgba(255,255,255,.82));
 }
 
 .rsvp-invite-card {
@@ -1403,6 +1477,10 @@ h1 {
   0%, 100% { box-shadow: 0 16px 34px rgba(244, 92, 156, .26); }
   50% { box-shadow: 0 16px 44px rgba(244, 92, 156, .42); }
 }
+@keyframes iconBounce {
+  0%, 100% { transform: translateY(0) rotate(8deg); }
+  50% { transform: translateY(-9px) rotate(3deg); }
+}
 @keyframes confettiFall {
   to { transform: translate(var(--x), var(--y)) rotate(540deg); opacity: 0; }
 }
@@ -1422,7 +1500,8 @@ h1 {
     grid-template-columns: 1fr;
   }
   .premium-form label:nth-of-type(3),
-  .premium-form button {
+  .premium-form button,
+  .premium-form .success-box {
     grid-column: auto;
   }
   .hero-card {
