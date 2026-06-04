@@ -30,7 +30,7 @@ function buildSummary() {
     declined,
     totalPeople,
     text: [
-      "Resumo do aniversario da Cecilia:",
+      "Resumo do aniversario:",
       `Confirmados: ${accepted.length}`,
       `Nao vao: ${declined.length}`,
       `Total de pessoas: ${totalPeople}`,
@@ -93,7 +93,7 @@ function exportCsv() {
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;
-  link.download = "lista_aniversario_cecilia.csv";
+  link.download = "lista_aniversario.csv";
   link.click();
   URL.revokeObjectURL(url);
 }

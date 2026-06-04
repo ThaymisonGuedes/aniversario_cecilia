@@ -1,4 +1,5 @@
-const eventDate = new Date("2026-06-28T18:00:00-03:00");
+const eventDateValue = document.body?.dataset.eventDate || "";
+const eventDate = eventDateValue ? new Date(eventDateValue) : null;
 const storageKeys = {
   rsvps: "cecilia_rsvps",
   messages: "cecilia_messages"
@@ -100,6 +101,13 @@ function setupSoftParallax() {
 
 function updateCountdown() {
   const target = $("#countdown");
+  if (!target) return;
+
+  if (!eventDate || Number.isNaN(eventDate.getTime())) {
+    target.innerHTML = "<span><b>Edite</b>a data</span>";
+    return;
+  }
+
   const diff = eventDate - new Date();
 
   if (diff <= 0) {
@@ -233,17 +241,17 @@ $("#exportBtn")?.addEventListener("click", () => {
   URL.revokeObjectURL(url);
 });
 
-$("#shareBtn")?.addEventListener("click", async () => {
-  const text = "Voce esta convidado para o aniversario da Cecilia! Abra o convite e confirme sua presenca.";
+["#shareBtn", "#shareFinalBtn"].forEach((selector) => $(selector)?.addEventListener("click", async () => {
+  const text = "Voce recebeu um convite especial de aniversario com tema Festa Junina. Abra o convite e confirme sua presenca.";
 
   if (navigator.share) {
-    await navigator.share({ title: "Aniversario da Cecilia", text, url: location.href });
+    await navigator.share({ title: "Convite digital de aniversario", text, url: location.href });
     return;
   }
 
   const whatsapp = `https://wa.me/?text=${encodeURIComponent(text + " " + location.href)}`;
   window.open(whatsapp, "_blank", "noopener,noreferrer");
-});
+}));
 
 updateCountdown();
 renderRsvps();

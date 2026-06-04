@@ -1,6 +1,6 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Aniversario Cecilia//Convite//PT-BR
+PRODID:-//Convite Aniversario//Convite//PT-BR
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
@@ -8,8 +8,8 @@ UID:aniversario-cecilia-20260628@local
 DTSTAMP:20260604T000000Z
 DTSTART:20260628T210000Z
 DTEND:20260629T010000Z
-SUMMARY:Aniversario da Cecilia
-DESCRIPTION:Arraia de aniversario da Cecilia. Confirme sua presenca no convite.
-LOCATION:Rua Matheus Lemos 2458, Granja Portugal, Fortaleza - CE
+SUMMARY:Aniversario infantil Festa Junina
+DESCRIPTION:Edite este arquivo com os dados oficiais do evento antes de enviar.
+LOCATION:Endereco do evento
 END:VEVENT
 END:VCALENDAR
