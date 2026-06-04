@@ -66,6 +66,22 @@ function setupRevealAnimations() {
   items.forEach((item) => observer.observe(item));
 }
 
+function setupOpeningInvite() {
+  const opening = $("#openingInvite");
+  if (!opening) return;
+
+  const open = () => {
+    if (opening.classList.contains("is-opening")) return;
+    opening.classList.add("is-opening");
+    launchConfetti(window.innerWidth / 2, window.innerHeight * 0.52);
+    setTimeout(launchFirework, 900);
+    setTimeout(() => opening.classList.add("is-done"), 3300);
+  };
+
+  opening.querySelector(".opening-button")?.addEventListener("click", open);
+  setTimeout(open, 1600);
+}
+
 function updateCountdown() {
   const target = $("#countdown");
   const diff = eventDate - new Date();
@@ -216,5 +232,6 @@ updateCountdown();
 renderRsvps();
 renderMessages();
 setupRevealAnimations();
+setupOpeningInvite();
 setInterval(updateCountdown, 1000);
 setInterval(launchFirework, 5200);
