@@ -7,22 +7,37 @@
   <meta name="description" content="Convite digital para o aniversario da Cecilia. Confirme sua presenca e deixe um recadinho.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Fredoka:wght@500;600;700&family=Nunito:wght@400;700;900&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="hero" id="inicio">
+    <div class="ambient" aria-hidden="true">
+      <span class="cloud cloud-one"></span>
+      <span class="cloud cloud-two"></span>
+      <span class="balloon balloon-pink"></span>
+      <span class="balloon balloon-blue"></span>
+      <span class="kite kite-one"></span>
+      <span class="kite kite-two"></span>
+      <span class="lantern lantern-one"></span>
+      <span class="lantern lantern-two"></span>
+      <span class="sparkle sparkle-one"></span>
+      <span class="sparkle sparkle-two"></span>
+      <span class="sparkle sparkle-three"></span>
+    </div>
     <nav class="nav" aria-label="Navegacao principal">
       <a href="#mensagem">Mensagem</a>
       <a href="#dia">O Grande Dia</a>
+      <a href="#traje">Traje</a>
+      <a href="#galeria">Galeria</a>
       <a href="#rsvp">RSVP</a>
-      <a href="#recados">Recados</a>
     </nav>
 
     <div class="bandeirinhas" aria-hidden="true"></div>
     <div class="hero-card">
-      <p class="eyebrow">Arraia de aniversario</p>
-      <h1>Cecilia</h1>
+      <p class="eyebrow">Arraia premium de aniversario</p>
+      <h1 class="shine-text">Cecilia</h1>
+      <p class="hero-date">28.06.2026 • 18h • Fortaleza</p>
       <div class="sao-joao-stage" aria-label="Animacao de Sao Joao com fogueira e bonecos dancando">
         <div class="dancer dancer-left" aria-hidden="true">
           <span class="hat"></span>
@@ -48,7 +63,7 @@
           <span class="leg leg-two"></span>
         </div>
       </div>
-      <p class="subtitle">Um Sao Joao docinho, colorido na medida certa e cheio de carinho para celebrar juntinhos.</p>
+      <p class="subtitle">Um Sao Joao infantil, docinho e encantado, com bandeirinhas, fogueira, risadas e muito amor para celebrar juntinhos.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="rsvp.html">Confirmar presenca</a>
         <button class="btn btn-ghost" id="shareBtn" type="button">Compartilhar convite</button>
@@ -58,7 +73,7 @@
   </header>
 
   <main>
-    <section class="section message" id="mensagem">
+    <section class="section message reveal" id="mensagem">
       <div class="section-label">Mensagem</div>
       <h2>Voce esta convidado!</h2>
       <p>
@@ -72,19 +87,22 @@
       </div>
     </section>
 
-    <section class="section event" id="dia">
+    <section class="section event reveal" id="dia">
       <div class="section-label">O Grande Dia</div>
       <h2>28 de junho de 2026</h2>
       <div class="event-grid">
         <article class="glass-card">
+          <span class="card-icon">☀</span>
           <strong>Quando</strong>
           <p>Domingo, a partir das 18:00</p>
         </article>
         <article class="glass-card">
+          <span class="card-icon">⌂</span>
           <strong>Onde</strong>
           <p>Rua Matheus Lemos, 2458<br>Granja Portugal, Fortaleza - CE</p>
         </article>
         <article class="glass-card countdown-card">
+          <span class="card-icon">☆</span>
           <strong>Contagem regressiva</strong>
           <div class="countdown" id="countdown" aria-live="polite">
             <span><b>--</b>dias</span>
@@ -121,10 +139,50 @@
       </div>
     </section>
 
-    <section class="section rsvp" id="rsvp">
+    <section class="section attire reveal" id="traje">
+      <div class="section-label">Traje tematico</div>
+      <h2>Vista seu melhor arraiá</h2>
+      <p>Venha no clima junino: xadrez, vestido rodado, laco colorido, chapeu de palha, botinha, jeans, suspensorio ou aquele detalhe fofo que deixa a foto ainda mais linda.</p>
+      <div class="attire-grid">
+        <article><span>👒</span><strong>Chapeu de palha</strong><small>O classico que combina com tudo.</small></article>
+        <article><span>🌻</span><strong>Flores e lacos</strong><small>Um toque delicado e infantil.</small></article>
+        <article><span>👗</span><strong>Xadrez colorido</strong><small>A cara do nosso Sao Joao.</small></article>
+      </div>
+    </section>
+
+    <section class="section gallery reveal" id="galeria">
+      <div class="section-label">Galeria decorativa</div>
+      <h2>Um cantinho cheio de encanto</h2>
+      <div class="gallery-grid" aria-label="Ilustracoes decorativas de festa junina infantil">
+        <article class="gallery-card sunflowers"><span>🌻</span><strong>Girassois dançando</strong></article>
+        <article class="gallery-card balloons"><span>🎈</span><strong>Baloes subindo</strong></article>
+        <article class="gallery-card corn"><span>🌽</span><strong>Milho e quitutes</strong></article>
+        <article class="gallery-card stars"><span>✨</span><strong>Ceu brilhante</strong></article>
+        <article class="gallery-card hats"><span>👒</span><strong>Caipirinhas fofos</strong></article>
+        <article class="gallery-card lanterns"><span>🏮</span><strong>Lanternas coloridas</strong></article>
+      </div>
+    </section>
+
+    <section class="section rsvp reveal" id="rsvp">
       <div class="section-label">RSVP</div>
       <h2>Confirme sua presenca</h2>
       <p class="deadline">A confirmacao sera encerrada em 28/06/2026.</p>
+      <form class="rsvp-form premium-form" id="rsvpForm">
+        <input type="hidden" name="status" value="Vou">
+        <label>
+          Nome
+          <input type="text" name="name" placeholder="Seu nome completo" required maxlength="100">
+        </label>
+        <label>
+          Quantidade de acompanhantes
+          <input type="number" name="guests" min="0" max="20" value="0" required>
+        </label>
+        <label>
+          Recadinho ou observacao
+          <textarea name="note" rows="3" placeholder="Ex: vou com duas criancas, tenho restricao alimentar..."></textarea>
+        </label>
+        <button class="btn btn-primary" type="submit">Confirmar agora</button>
+      </form>
       <div class="rsvp-invite-card">
         <div class="floating-lantern" aria-hidden="true"></div>
         <h3>Fale para a Cecilia se voce podera ir</h3>
@@ -140,7 +198,7 @@
       </div>
     </section>
 
-    <section class="section gifts">
+    <section class="section gifts reveal">
       <div class="section-label">Presentes</div>
       <h2>Ideias com carinho</h2>
       <p>Se quiser presentear, aqui vao ideias simples para inspirar. Voce pode editar esses itens no arquivo <strong>index.html</strong>.</p>
@@ -152,7 +210,7 @@
       </div>
     </section>
 
-    <section class="section testimonials" id="recados">
+    <section class="section testimonials reveal" id="recados">
       <div class="section-label">Recadinhos</div>
       <h2>Deixe um recado para a Cecilia</h2>
       <form class="message-form" id="messageForm">
@@ -165,7 +223,7 @@
   </main>
 
   <footer class="footer">
-    <p>Com amor, familia da Cecilia.</p>
+    <p>Com amor, familia da Cecilia. Esperamos voce no arraiá!</p>
     <a href="#inicio">Voltar ao topo</a>
     <a href="admin.html">Area da dona da festa</a>
   </footer>

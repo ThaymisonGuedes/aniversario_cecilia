@@ -18,6 +18,54 @@ function saveJson(key, value) {
   localStorage.setItem(key, JSON.stringify(value));
 }
 
+function launchConfetti(originX = window.innerWidth / 2, originY = window.innerHeight / 2) {
+  const colors = ["#f45c9c", "#ffd166", "#91d9ff", "#b995ff", "#8bcf93"];
+
+  Array.from({ length: 26 }).forEach((_, index) => {
+    const piece = document.createElement("span");
+    const angle = (Math.PI * 2 * index) / 26;
+    const distance = 80 + Math.random() * 110;
+
+    piece.className = "confetti-piece";
+    piece.style.left = `${originX}px`;
+    piece.style.top = `${originY}px`;
+    piece.style.background = colors[index % colors.length];
+    piece.style.setProperty("--x", `${Math.cos(angle) * distance}px`);
+    piece.style.setProperty("--y", `${Math.sin(angle) * distance + 120}px`);
+    document.body.appendChild(piece);
+    piece.addEventListener("animationend", () => piece.remove(), { once: true });
+  });
+}
+
+function launchFirework() {
+  const firework = document.createElement("span");
+  firework.className = "firework";
+  firework.style.left = `${12 + Math.random() * 76}vw`;
+  firework.style.top = `${14 + Math.random() * 34}vh`;
+  document.body.appendChild(firework);
+  firework.addEventListener("animationend", () => firework.remove(), { once: true });
+}
+
+function setupRevealAnimations() {
+  const items = document.querySelectorAll(".reveal");
+
+  if (!("IntersectionObserver" in window)) {
+    items.forEach((item) => item.classList.add("is-visible"));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.16 });
+
+  items.forEach((item) => observer.observe(item));
+}
+
 function updateCountdown() {
   const target = $("#countdown");
   const diff = eventDate - new Date();
@@ -101,8 +149,9 @@ if (rsvpForm) {
 
     saveJson(storageKeys.rsvps, rsvps);
     event.currentTarget.reset();
-    event.currentTarget.status.value = "Vou";
-    event.currentTarget.guests.value = 0;
+    event.currentTarget.elements.status.value = "Vou";
+    event.currentTarget.elements.guests.value = 0;
+    launchConfetti(window.innerWidth / 2, window.innerHeight / 2);
     renderRsvps();
   });
 }
@@ -120,7 +169,16 @@ $("#messageForm")?.addEventListener("submit", (event) => {
 
   saveJson(storageKeys.messages, messages);
   event.currentTarget.reset();
+  launchConfetti(window.innerWidth / 2, window.innerHeight / 2);
   renderMessages();
+});
+
+document.addEventListener("click", (event) => {
+  const button = event.target.closest(".btn");
+  if (!button) return;
+
+  const rect = button.getBoundingClientRect();
+  launchConfetti(rect.left + rect.width / 2, rect.top + rect.height / 2);
 });
 
 $("#exportBtn")?.addEventListener("click", () => {
@@ -153,4 +211,6 @@ $("#shareBtn")?.addEventListener("click", async () => {
 updateCountdown();
 renderRsvps();
 renderMessages();
+setupRevealAnimations();
 setInterval(updateCountdown, 1000);
+setInterval(launchFirework, 5200);
