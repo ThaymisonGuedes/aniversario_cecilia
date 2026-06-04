@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Acompanhantes - Cecilia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="step-page">
+  <main class="step-card">
+    <div class="progress-dots" aria-label="Etapa 3 de 3">
+      <span></span><span></span><span class="is-active"></span>
+    </div>
+    <h1>Acompanhantes</h1>
+    <p>Conta pra gente quantas pessoas vao com voce.</p>
+
+    <form class="step-form" id="companionsForm">
+      <label>
+        Quantos acompanhantes?
+        <input type="number" name="guests" min="0" max="10" value="0">
+      </label>
+      <label>
+        Observacao
+        <textarea name="note" rows="4" placeholder="Alguma observacao para a familia?"></textarea>
+      </label>
+      <div class="step-actions">
+        <button class="btn btn-primary" type="submit">Finalizar resposta</button>
+        <a class="btn btn-ghost" href="guest.html?status=Vou">Voltar</a>
+      </div>
+    </form>
+  </main>
+  <script src="companions.js"></script>
+</body>
+</html>

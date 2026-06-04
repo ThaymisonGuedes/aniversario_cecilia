@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Confirmar presenca - Cecilia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="rsvp-page">
+  <div class="rsvp-scene" aria-hidden="true"></div>
+  <span class="rsvp-balloon one" aria-hidden="true"></span>
+  <span class="rsvp-balloon two" aria-hidden="true"></span>
+  <span class="rsvp-balloon three" aria-hidden="true"></span>
+
+  <main class="rsvp-modal-card">
+    <a class="modal-close" href="index.html" aria-label="Fechar confirmacao">x</a>
+    <p class="eyebrow">RSVP do arraia</p>
+    <h1>Vai ter Sao Joao!</h1>
+    <p class="subtitle">Fale para a Cecilia se voce podera ir.</p>
+    <p class="deadline">28 de Jun as 18:00 - Casa da Cecilia</p>
+
+    <div class="rsvp-options">
+      <button class="rsvp-option" type="button" data-status="Vou">
+        <span class="emoji-face">:)</span>
+        <span>Eu vou sim!</span>
+      </button>
+      <button class="rsvp-option" type="button" data-status="Nao vou">
+        <span class="emoji-face">:(</span>
+        <span>Poxa, nao vou poder</span>
+      </button>
+    </div>
+
+    <p class="rsvp-helper">Depois dessa escolha, vamos perguntar seu nome em outra tela.</p>
+  </main>
+
+  <script src="rsvp.js"></script>
+</body>
+</html>

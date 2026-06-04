@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Painel da festa - Cecilia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="admin-page">
+  <main class="admin-shell">
+    <header class="admin-header">
+      <div>
+        <p class="eyebrow">Controle da festa</p>
+        <h1>Painel da Cecilia</h1>
+      </div>
+      <a class="btn btn-ghost" href="index.html">Voltar ao convite</a>
+    </header>
+
+    <section class="admin-grid" id="adminStats"></section>
+
+    <section class="admin-panel">
+      <div class="admin-toolbar">
+        <button class="btn btn-primary" id="copySummaryBtn" type="button">Copiar resumo</button>
+        <button class="btn btn-ghost" id="whatsappSummaryBtn" type="button">Avisar por WhatsApp</button>
+        <button class="btn btn-ghost" id="exportAdminBtn" type="button">Exportar CSV</button>
+        <button class="btn btn-ghost" id="clearAdminBtn" type="button">Limpar lista</button>
+      </div>
+      <div id="adminTableWrap"></div>
+    </section>
+  </main>
+  <script src="admin.js"></script>
+</body>
+</html>

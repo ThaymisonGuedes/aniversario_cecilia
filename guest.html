@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quem e voce? - Cecilia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="step-page">
+  <main class="step-card">
+    <div class="progress-dots" aria-label="Etapa 2 de 3">
+      <span></span><span class="is-active"></span><span></span>
+    </div>
+    <h1>Diga quem voce e</h1>
+    <small>Vamos perguntar sobre seus acompanhantes em outra tela.</small>
+
+    <form class="step-form" id="guestForm">
+      <label>
+        Nome
+        <input maxlength="50" name="name" placeholder="Nome" required autocomplete="given-name">
+      </label>
+      <label>
+        Sobrenome
+        <input maxlength="50" name="lastName" placeholder="Sobrenome" autocomplete="family-name">
+      </label>
+      <div class="step-actions">
+        <button class="btn btn-primary" type="submit">Continuar</button>
+        <a class="btn btn-ghost" href="rsvp.html">Voltar</a>
+      </div>
+    </form>
+  </main>
+  <script src="guest.js"></script>
+</body>
+</html>

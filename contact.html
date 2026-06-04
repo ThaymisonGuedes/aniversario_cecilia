@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contato - Cecilia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="step-page">
+  <main class="step-card">
+    <div class="progress-dots" aria-label="Etapa de contato">
+      <span></span><span></span><span></span><span class="is-active"></span>
+    </div>
+    <h1>Seu contato</h1>
+    <p>Assim a dona da festa consegue conferir e avisar se precisar.</p>
+
+    <form class="step-form" id="contactForm">
+      <label>
+        WhatsApp ou telefone
+        <input name="phone" placeholder="(85) 99999-9999" maxlength="30" inputmode="tel">
+      </label>
+      <p class="contact-note">Esse campo ajuda no controle da lista da festa.</p>
+      <div class="step-actions">
+        <button class="btn btn-primary" type="submit">Salvar confirmacao</button>
+        <a class="btn btn-ghost" href="review.html">Voltar</a>
+      </div>
+    </form>
+
+    <form name="rsvp-cecilia" netlify hidden>
+      <input type="text" name="id">
+      <input type="text" name="status">
+      <input type="text" name="name">
+      <input type="text" name="age">
+      <input type="number" name="guests">
+      <input type="text" name="phone">
+      <textarea name="note"></textarea>
+      <input type="text" name="createdAt">
+    </form>
+  </main>
+  <script src="contact.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Revisar presenca - Cecilia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="step-page">
+  <main class="step-card">
+    <div class="progress-dots" aria-label="Etapa de revisao">
+      <span></span><span></span><span></span><span class="is-active"></span>
+    </div>
+    <h1>Esta todo mundo ai?</h1>
+    <p>So pra confirmar, revise quem esta respondendo.</p>
+
+    <div class="guest-review-list">
+      <div class="guest-review-card">
+        <div>
+          <strong id="guestName">Convidado</strong>
+          <small id="guestAge">Idade</small>
+        </div>
+        <a class="circle-action" href="guest.html" aria-label="Editar convidado">edit</a>
+      </div>
+
+      <a class="add-companion-card" id="addCompanion" href="companions.html">
+        <strong>Adicionar acompanhante</strong>
+        <span class="circle-action">+</span>
+      </a>
+    </div>
+
+    <div class="step-actions">
+      <button class="btn btn-primary" id="finishBtn" type="button">Sim, tudo bem</button>
+      <a class="btn btn-ghost" href="age.html">Voltar</a>
+    </div>
+  </main>
+  <script src="review.js"></script>
+</body>
+</html>
